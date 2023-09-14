@@ -15,3 +15,5 @@ pkgs.mkShell {
 ```
 
 In the project you can now enable it via `nix-shell` from the Mac host or from the Linux VM.
+
+For VSCode I'm using the [Nix Environment Selector Extension](https://marketplace.visualstudio.com/items?itemName=arrterian.nix-env-selector)

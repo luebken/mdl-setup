@@ -1,3 +1,4 @@
+# build with "darwin-rebuild switch"
 { config, pkgs, ... }:
 
 {
@@ -10,6 +11,7 @@
       pkgs.jq
       pkgs.git
       pkgs.gnumake
+      pkgs.nixpkgs-fmt
     ];
 
   # Auto upgrade nix package and the daemon service.
@@ -22,4 +24,11 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
+  # Mac System settings
+  system.defaults.trackpad.Clicking = true;
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 10;
+  system.defaults.NSGlobalDomain.KeyRepeat = 1;
+  system.keyboard.enableKeyMapping = true;
+  system.keyboard.remapCapsLockToEscape = true;
 }

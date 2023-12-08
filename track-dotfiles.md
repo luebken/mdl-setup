@@ -9,8 +9,13 @@ Next create a [bare Git repository](https://www.saintsjd.com/2011/01/what-is-a-b
 
 ```sh
 git init --bare $HOME/.mdl-cfg
+```
+```sh
+# Add the alias to .bash_profile:
 alias mdl-cfg='git --git-dir=$HOME/.mdl-cfg/ --work-tree=$HOME'
-# Add the alias to .bash_profile 
+echo "$ mdl-cfg status -s:"
+mdl-cfg status -s
+echo "to clean run: $ mdl-cfg clean -fd"
 ```
 
 Afterwards use your new command just like git:
@@ -21,3 +26,4 @@ mdl-cfg commit -m "inital commit"
 ```
 
 Note: I explicitly want so show untracked files. Other tutorials suggest to unset it via: `status.showUntrackedFiles no`.
+
